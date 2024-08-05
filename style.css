@@ -80,11 +80,46 @@ img{
 .content{
     width: 50rem;
     height: 30rem;
+    position: relative;
     /* margin: 3rem auto; */
     border-radius: 3rem;
     padding: 2rem 4rem;
     border: 2px solid #000;
     /* background-color: cyan; */
+}
+.skeletonload{
+    width: 50rem;
+    height: 30rem;
+    border-radius: 3rem;
+    position: absolute;
+    padding: 2rem 4rem;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* background-color: red; */
+}
+.wordload{
+    /* width:120rem; */
+    height: 4rem; 
+    background: #ececec;
+}
+.lineload1,.lineload2,.lineload3{
+    height: 1.7rem;
+    background: #ececec;
+    margin-top: 1.5rem;
+}
+.lineload1,.lineload3{
+    width: 90%;    
+}
+.lineload2{
+    width: 70%;    
+}
+.wordload,.lineload1,.lineload2,.lineload3{
+    border-radius: 10px;
+    background-image: linear-gradient(120deg,#ececec 50%,#fafafa 60%,#fafafa 61%,#ececec 70%);
+    background-size: 200%;
+    background-position: 100% 0;
+    animation: waves 1s linear infinite;
 }
 .contleft{
     width: 11rem;
@@ -121,4 +156,9 @@ img{
 .content p{
     text-transform:capitalize;
     font-size: 1.5rem;
+}
+@keyframes waves {
+    100%{
+        background-position: -100% 0;
+    }
 }
