@@ -23,8 +23,14 @@ async function getdata(searchedword){
         // console.log("hello")
     },2000)
     setTimeout(() => {
-        wordtag.innerHTML = result[0].word
-        meaningtag.innerHTML = result[0].meaning
+        if(result.length>0){
+            wordtag.innerHTML = result[0].word
+            meaningtag.innerHTML = result[0].meaning
+        }
+        else{
+            wordtag.innerHTML = "No Match Found";
+            document.querySelector("#search").value='';
+        }
     }, 2000);
     console.log(result[0].meaning)
     // meaningtag.innerHTML=n.meaning;
