@@ -10,23 +10,27 @@
     rel="stylesheet"
 />
 </head>
-<body>
+<body theme="light">
     <div class="main">
         <nav>
             <div class="left">
-                <div class="logo"><img src="ems.webp" alt=""></div>
+                <div class="logo"><img src="logo.png" alt=""></div>
             </div>
             <div class="middle">
                 <div class="searchcontent">
                     <div class="searchbar">
-                        <input type="text" name="" id="search" placeholder="Search">
-                        <button id="searchicon"><i class="ri-search-line"></i></button>
+                        <input type="text" name="" id="search" placeholder="Search" required>
+                        <button id="searchicon" class="borderhover"><i class="ri-search-line"></i></button>
                     </div>
                     <div class="resultbox">
-                        <ul>
-                    
-                        </ul>
                     </div>
+                </div>
+                <div class="voice" id="voice">
+                    <i class="ri-mic-line"></i>
+                </div>
+                <div class="theme">
+                    <i class="ri-sun-line" id="sun"></i>
+                    <i class="ri-moon-line" id="moon"></i>
                 </div>
             </div>
             <div class="right">
@@ -34,7 +38,7 @@
             </div>
         </nav>
         <div class="container">
-            <div class="contleft">
+            <div class="contleft" id="contleft">
                 <ul>
                     <li>A</li>
                     <li>B</li>
@@ -79,12 +83,13 @@
                     <p class="meaningtag">meaning</p>
                 </div>
             </div>
-            <div class="contright">
+            <div class="contright" id="contright">
 
             </div>
         </div>
     </div>
     <script src="app.js"></script>
     <script src="script.js"></script>
+    <script src="speechtotext.js"></script>
 </body>
 </html>

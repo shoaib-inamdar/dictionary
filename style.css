@@ -30,13 +30,17 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
-    background: rgba(225,225, 225,.3);
-    backdrop-filter: blur(10px);
+    border: 2px solid #EBCF7D;
+    /* background: rgb(171,136,78); */
+    background: rgba(225,225,225,.4);
+    /* background: linear-gradient(319deg, rgba(171,136,78,1) 12%, rgba(235,207,125,1) 50%, rgba(171,136,78,1) 92%);    backdrop-filter: blur(10px); */
+    border-radius: 10px;
 }
 .middle{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: .3rem;
 }
 #search{
     width: 30rem;
@@ -54,12 +58,17 @@ nav{
     width: 3rem;
     border-radius: 10px;
     height: 3rem;
+    /* padding: 1.5rem; */
     background:#fff;
     border: none;
+    cursor: pointer;
     /* background-color: blue; */
     /* transform: translateX(-2rem); */
     /* border-top-right-radius: 2rem; */
     /* border-bottom-right-radius: 2rem; */
+}
+#searchicon:hover{
+    border: 3px solid #EBCF7D;
 }
 .searchcontent{
     position: relative;
@@ -73,7 +82,7 @@ nav{
     width: 100%;
 }
 #search i{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 img{
     width: 100%;
@@ -81,8 +90,8 @@ img{
     object-fit: cover;
 }
 .logo{
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     background-color: black;
 }
 .container{
@@ -104,7 +113,8 @@ img{
     gap: 1.5rem;
     border-radius: 3rem;
     padding: 2rem 4rem;
-    border: 2px solid #000;
+    /* background: rgb(171,136,78); */
+    /* background: linear-gradient(319deg, rgba(171,136,78,1) 12%, rgba(235,207,125,1) 50%, rgba(171,136,78,1) 92%);    border: 2px solid #000; */
     /* background-color: cyan; */
 }
 .skeletonload{
@@ -116,6 +126,8 @@ img{
     top: 0;
     left: 0;
     opacity: 0;
+    pointer-events: none;
+    /* cursor:progress; */
     /* background-color: red; */
 }
 .wordload{
@@ -191,7 +203,7 @@ img{
     background:#fff;
 }
 .resultbox ul{
-    border-top: 1px solid #000;
+    border-top: 1px solid #000000;
     padding: 15px 10px;
 }
 .resultbox>ul>li{
@@ -203,6 +215,34 @@ img{
 .resultbox ul li:hover{
     background: #e9f3ff;
 }
+.theme,.voice{
+    background: #fff;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    padding: 1.5rem;
+    display: flex;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.theme i{
+    position: absolute;
+    background: #fff;
+    font-size: 1rem;
+}
+#sun{
+    opacity: 0;
+}
+#moon{
+    opacity: 1;
+}
+.voice i{
+    background: #fff;
+    font-size: 1rem;
+}
+
 @keyframes waves {
     100%{
         background-position: -100% 0;

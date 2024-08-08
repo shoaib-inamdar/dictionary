@@ -53,3 +53,5 @@ document.onkeydown=function(e){
         case 13:search();
     }
 }
+
+// module.exports=search();

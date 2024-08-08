@@ -1856,23 +1856,30 @@ var words=[
 
 const resultbox=document.querySelector(".resultbox")
 const inputbox=document.querySelector("#search")
+var searchbtn=document.querySelector('#searchicon')
 
 inputbox.onkeyup=function(){
     let result=[];
     let input=inputbox.value
     if(input.length){
         result=words.filter((e)=>{
-            return e.toLowerCase().includes(input.toLowerCase());
+            return e.toLowerCase().startsWith(input.toLowerCase());
         });
 
     }
-    if(!result){
-        resultbox.innerHTML='no results found';
+    
+    if(result.length===0){
+        resultbox.innerHTML = input.length === 0 ? '' : '<ul><li>No results found</li></ul>';
+        searchbtn.addEventListener('click',function(e){
+            resultbox.innerHTML='';
+        })
     }
     else{
         display(result);
     }
 }
+
+// inputbox.addEventListener("focus",function(){})
 
 function display(result){
     const content =result.map((list)=>{
