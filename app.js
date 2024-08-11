@@ -1,7 +1,7 @@
 const url="https://shoaib-inamdar.github.io/api-file/dictionary.json"
 var meaningtag=document.querySelector('.meaningtag')
 var wordtag=document.querySelector('.wordtag')
-var arr=["10-code","2,3-diphosphoglycerate","Abandonment","ABCs"]
+// var arr=["10-code","2,3-diphosphoglycerate","Abandonment","ABCs"]
 var btn=document.querySelector('#searchicon')
 var loading=document.querySelector(".skeletonload");
 

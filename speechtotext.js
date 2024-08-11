@@ -1,13 +1,14 @@
-var startButton = document.getElementById("voice");
+var voice = document.getElementById("voice");
 var stopButton = document.getElementById("stop");
 var resultElement = document.getElementById("contleft");
+var voicerepeat=document.querySelector(".voicerepeat");
 
 var recognition = new webkitSpeechRecognition();
 
 recognition.lang = window.navigator.language;
 recognition.interimResults = true;
 
-startButton.addEventListener("click", () => {
+voice.addEventListener("click", () => {
   recognition.start();
 });
 // stopButton.addEventListener("click", () => {
@@ -19,3 +20,8 @@ recognition.addEventListener("result", (event) => {
   resultElement.textContent = result;
 //   console.log(result)
 });
+
+
+voicerepeat.addEventListener("click",function(){
+  recognition.start();
+})
