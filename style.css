@@ -5,18 +5,19 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-html,
-body {
+html,body {
   width: 100%;
   height: 100%;
 }
 .main {
   width: 100%;
   height: 100vh;
+  /* background-color: rebeccapurple; */
+  overflow-x: hidden;
 }
 nav {
   width: 95%;
-  height: 100px;
+  height: 7rem;
   /* background-color: salmon; */
   display: flex;
   position: fixed;
@@ -50,12 +51,12 @@ nav {
   height: 3rem;
   padding: 1rem;
   border: none;
-  /* border-top-left-radius: 2rem; */
-  /* border-bottom-left-radius: 2rem; */
   outline: none;
   border-radius: 10px;
-  /* border: 2px solid #000; */
-  /* background-color: red; */
+}
+.feature{
+  display: flex;
+  gap: .5rem;
 }
 #searchicon {
   width: 3rem;
@@ -86,6 +87,8 @@ nav {
 }
 #search i {
   font-size: 1.3rem;
+  /* width: 100%;/ */
+  /* height: 100%; */
 }
 img {
   width: 100%;
@@ -101,7 +104,7 @@ img {
   width: 100%;
   height: 100%;
   display: flex;
-  margin: 10rem 0;
+  margin-top: 10rem;
   justify-content: space-between;
   /* align-items: center; */
   padding: 0 2rem;
@@ -129,6 +132,7 @@ img {
   top: 0;
   left: 0;
   opacity: 0;
+  /* z-index:999; */
   pointer-events: none;
   /* cursor:progress; */
   /* background-color: red; */
@@ -199,6 +203,7 @@ img {
   /* border-bottom: 2px solid #000; */
   /* margin-bottom: 2rem; */
   text-transform: capitalize;
+  font-weight: 400;
 }
 .content p {
   text-transform: capitalize;
@@ -230,8 +235,7 @@ img {
 .resultbox ul li:hover {
   background: #e9f3ff;
 }
-.theme,
-.voice {
+.theme,.voice,.menu {
   background: #fff;
   width: 3rem;
   height: 3rem;
@@ -248,11 +252,26 @@ img {
   background: #fff;
   font-size: 1rem;
 }
+.menu{
+  display: none;
+}
 #sun {
   opacity: 0;
 }
 #moon {
   opacity: 1;
+}
+input:focus{
+  border: 3px solid #ebcf7d;
+}
+.menu:hover{
+  border: 3px solid #ebcf7d;
+}
+.theme:hover{
+  border: 2px solid #ebcf7d;
+}
+.voice:hover{
+  border: 2px solid #ebcf7d;
 }
 .voice i {
   background: #fff;
@@ -315,7 +334,6 @@ img {
   height: 7rem;
   /* background-color: blue; */
   border-radius: 10px;
-  background: #afaeae;
 }
 .voicebtn {
   width: 15rem;
@@ -364,6 +382,14 @@ img {
     animation-delay: 3s;
   }
 }
+textarea{
+  width: 100%;
+  height: 100%;
+  resize: none;
+  background: #afaeae;
+  border-radius: 10px;
+  padding: 1rem;
+}
 
 @keyframes growAndFade {
   0% {
@@ -378,5 +404,78 @@ img {
 @keyframes waves {
   100% {
     background-position: -100% 0;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .main{
+    width: 100%;
+    height: 100vh;
+  }
+  nav{
+    height: 10rem;
+    padding: 0 .3rem;
+    margin: .5rem 0;
+  }
+  .container{
+    padding: 0 .5rem;
+    margin-top: 11rem;
+  }
+  .logo{
+    display: none;
+  }
+  #search{
+    width: 18rem;
+    height: 4rem;
+  }
+  #searchicon{
+    width: 4rem;
+    height: 4rem;
+  }
+  #searchicon i{
+    font-size: 1.1rem;
+  }
+  .middle{
+    flex-direction: column;
+  }
+  .feature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .content{
+    height: 100%;
+    width:100%;
+    /* background-color: red; */
+    padding: 2rem;
+    /* margin-top: 10rem; */
+  }
+  .right{
+    display: none;
+  }
+  .menu{
+    display: flex;
+    
+  }
+  .skeletonload{
+    width: 100%;
+    /* height: 3rem; */
+    padding: .5rem;
+  }
+  .wordload{
+    height: 7rem;
+  }
+  .lineload1,.lineload2,.lineload3{
+    height: 3rem;
+  }
+  .contleft{
+    display: none;
+  }
+  .contright{
+    display: none;
+  }
+  .voicebox{
+    width: 23rem;
+    height: 30rem;
   }
 }

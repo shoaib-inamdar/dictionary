@@ -1,7 +1,10 @@
 var voice = document.getElementById("voice");
 var stopButton = document.getElementById("stop");
-var resultElement = document.getElementById("contleft");
+var voicetext = document.getElementById("voicetext");
 var voicerepeat=document.querySelector(".voicerepeat");
+var cross=document.querySelector("#cross")
+var voiceok=document.querySelector(".voiceok");
+var voicediv=document.querySelector(".voicediv");
 
 var recognition = new webkitSpeechRecognition();
 
@@ -17,7 +20,7 @@ voice.addEventListener("click", () => {
 
 recognition.addEventListener("result", (event) => {
   const result = event.results[event.results.length - 1][0].transcript;
-  resultElement.textContent = result;
+  voicetext.textContent = result;
 //   console.log(result)
 });
 
@@ -25,3 +28,25 @@ recognition.addEventListener("result", (event) => {
 voicerepeat.addEventListener("click",function(){
   recognition.start();
 })
+
+cross.addEventListener("click",function(){
+  recognition.stop();
+})
+
+function voicesearch(){
+  var searchword=voicetext.value;
+  recognition.stop();
+  getdata(searchword);
+  voicetext.value='';
+  voicediv.style.display="none";
+}
+
+voiceok.addEventListener("click",function(){
+  voicesearch()
+})
+
+document.onkeydown=function(e){
+  switch(e.keyCode){
+      case 13:voicesearch();
+  }
+}
